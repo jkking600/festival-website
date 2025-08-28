@@ -1,114 +1,335 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Durga Puja 2025 Festival Hub</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Festival Hub • Shubho Durga Puja 2025</title>
+  <meta name="description" content="Premium festival hub for Durga Puja 2025 – gifts, greetings, stickers, and offers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🪔</text></svg>">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #fff3e0;
-      margin: 0;
-      padding: 0;
+    :root{
+      --bg: #0b0a10;             /* deep night */
+      --bg-soft: #12101a;         /* soft panel */
+      --gold: #f7c66a;            /* festive gold */
+      --crimson: #cc2b2b;         /* puja red */
+      --rose: #ff8a8a;            /* accent */
+      --text: #f5f7ff;            /* primary text */
+      --muted: #c8c8d3;           /* secondary */
+      --glass: rgba(255,255,255,.06);
+      --blur: blur(10px);
     }
-    header {
-      background: #d32f2f;
-      color: white;
-      text-align: center;
-      padding: 20px;
+    *,*:before,*:after{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; color:var(--text); background:radial-gradient(1200px 800px at 75% -10%,rgba(255,180,80,.08),transparent),
+      radial-gradient(1200px 800px at 15% 110%,rgba(255,80,120,.08),transparent),
+      var(--bg);
+      font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",sans-serif; 
+      line-height:1.6; overflow-x:hidden;
     }
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-    .card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-      text-align: center;
-      transition: 0.3s;
-    }
-    .card:hover {
-      transform: scale(1.05);
-    }
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .card h3 {
-      margin: 10px 0;
-      color: #d32f2f;
-    }
-    .card p {
-      padding: 0 10px;
-      font-size: 14px;
-      color: #444;
-    }
-    .btn {
-      display: inline-block;
-      margin: 15px 0;
-      padding: 10px 20px;
-      background: #ff6600;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-    footer {
-      background: #d32f2f;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      margin-top: 20px;
-    }
+    a{color:inherit}/* === Global layout === */
+.container{max-width:1200px;margin-inline:auto;padding:24px}
+header.site-nav{position:sticky;top:0;z-index:50;backdrop-filter:var(--blur);background:linear-gradient(180deg,rgba(11,10,16,.85),rgba(11,10,16,.45));border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.3px}
+.brand .logo{width:36px;height:36px;display:grid;place-items:center;border-radius:14px;background:conic-gradient(from 180deg,var(--gold),#ffcf9e,var(--rose),var(--gold));box-shadow:0 6px 20px rgba(247,198,106,.25)}
+.brand .title{font-size:clamp(18px,2vw,22px)}
+
+.nav-cta{display:flex;gap:10px}
+.btn{--bg:#1d1a27;--bd:rgba(255,255,255,.14);--fg:var(--text);display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:14px;border:1px solid var(--bd);background:var(--bg);color:var(--fg);text-decoration:none;font-weight:600;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.btn.gold{--bg:linear-gradient(180deg,#ffd88f,#f7c66a 60%,#e3a93f);--fg:#5b3a00;color:#3d2a00;text-shadow:0 1px 0 rgba(255,255,255,.35)}
+.btn.ghost{--bg:rgba(255,255,255,.06)}
+
+/* === Hero === */
+.hero{position:relative;min-height:68vh;display:grid;place-items:center;padding-top:32px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:30px}
+@media (max-width: 900px){.hero-grid{grid-template-columns:1fr;gap:16px}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--muted);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:6px 10px}
+.hero h1{font-family:Merriweather,serif;font-weight:700;line-height:1.15;margin:12px 0 10px;font-size:clamp(28px,6vw,56px)}
+.lead{color:#eaeaf5;font-weight:400;opacity:.9}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+
+/* Animated diya + mandala */
+.scene{position:relative;isolation:isolate}
+.mandala{position:absolute;inset:auto;left:50%;top:50%;translate:-50% -50%;width:min(72vmin,560px);opacity:.25;filter:drop-shadow(0 0 30px rgba(247,198,106,.15))}
+.mandala svg{width:100%;height:100%;animation:slowSpin 80s linear infinite}
+@keyframes slowSpin{to{transform:rotate(360deg)}}
+
+.diya{position:relative; width:min(56vmin,440px);margin-inline:auto}
+.flame{position:absolute; left:50%; top:18%; translate:-50% -50%; width:70px; height:110px; filter:blur(.4px)}
+.flame .f{position:absolute; inset:0; background:radial-gradient(ellipse at 50% 30%, #fff8b5 0%, #ffd66e 35%, #ff9b2f 60%, rgba(255,120,0,.0) 70%); border-radius:50% 50% 50% 50%; transform-origin:50% 80%; animation:flame 2.2s ease-in-out infinite}
+.flame .f:nth-child(2){transform:scale(.8) translateY(6px); filter:blur(1.5px); animation-duration:2.7s; opacity:.9}
+.flame .f:nth-child(3){transform:scale(.6) translateY(12px); filter:blur(2px); animation-duration:3.1s; opacity:.8}
+@keyframes flame{0%,100%{transform:rotate(-2deg) scale(1) translateY(0)}50%{transform:rotate(3deg) scale(1.05) translateY(-4px)}}
+.smoke{position:absolute; left:52%; top:-10%; width:200px; height:160px; pointer-events:none; opacity:.25}
+.smoke span{position:absolute; bottom:-10px; left:50%; width:10px; height:10px; background:radial-gradient(circle, rgba(255,255,255,.8) 0%, rgba(255,255,255,0) 70%); border-radius:50%; animation:smoke 6s linear infinite; filter:blur(2px)}
+.smoke span:nth-child(2){animation-delay:1.5s}
+.smoke span:nth-child(3){animation-delay:3s}
+@keyframes smoke{0%{transform:translate(-50%,0) scale(.3); opacity:.4} 60%{opacity:.15} 100%{transform:translate(-50%,-160px) scale(1.3); opacity:0}}
+
+/* Offer marquee */
+.marquee{position:relative; overflow:hidden; border-block:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03)}
+.marquee .track{display:flex; gap:32px; padding:10px 0; will-change:transform; animation:scroll 22s linear infinite}
+.marquee .pill{white-space:nowrap; padding:6px 14px; border-radius:999px; border:1px dashed rgba(255,255,255,.18); background:rgba(255,255,255,.05); color:#fff}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* Product grid */
+.section{padding:56px 0}
+.section h2{font-family:Merriweather,serif; font-size:clamp(22px,3.4vw,36px); margin:0 0 10px}
+.muted{color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media (max-width:1100px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.grid{grid-template-columns:1fr}}
+
+.card{position:relative;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);box-shadow:0 8px 30px rgba(0,0,0,.25);overflow:hidden;transition:transform .25s ease, box-shadow .25s ease}
+.card:hover{transform:translateY(-4px); box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.card .thumb{aspect-ratio:4/3; width:100%; object-fit:cover; filter:contrast(1.05) saturate(1.05)}
+.card .content{padding:14px 14px 18px}
+.tag{display:inline-block;font-size:12px;padding:4px 10px;border-radius:999px;background:rgba(247,198,106,.12);border:1px solid rgba(247,198,106,.35);color:#ffd684}
+.title{margin:8px 0 6px; font-weight:700; letter-spacing:.2px}
+.desc{font-size:14px; color:#e9e9f7; opacity:.9}
+.price{display:flex; align-items:center; gap:8px; margin-top:10px; color:#ffe3a8}
+.strike{opacity:.55; text-decoration:line-through}
+
+.buy{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:14px}
+.btn.buy{--bg:linear-gradient(180deg,#ffd88f,#f7c66a 60%,#e3a93f); --fg:#3d2a00}
+
+/* Stickers/Greetings */
+.pill-row{display:flex;gap:12px;flex-wrap:wrap}
+.dl{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);text-decoration:none}
+
+/* Footer */
+footer{border-top:1px solid rgba(255,255,255,.08); background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.02)); padding:28px 0; color:var(--muted)}
+.social{display:flex; gap:14px}
+.social a{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);text-decoration:none}
+
+/* Particles (background fireflies) */
+.particles{position:fixed; inset:0; pointer-events:none; z-index:-1}
+.particle{position:absolute; width:6px; height:6px; border-radius:50%; background:radial-gradient(circle, rgba(255,215,130,1) 0%, rgba(255,215,130,.2) 50%, rgba(255,215,130,0) 70%); opacity:.6; filter:blur(.2px); animation:floatUp linear infinite}
+@keyframes floatUp{0%{transform:translate(var(--x), 100vh) scale(.4); opacity:0} 10%{opacity:.5} 90%{opacity:.6} 100%{transform:translate(calc(var(--x) + 20px), -20vh) scale(1.1); opacity:0}}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce){
+  .mandala svg, .marquee .track, .flame .f, .smoke span, .particle{animation:none}
+}
+
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>🎉 Shubho Durga Puja 2025 🎉</h1>
-    <p>Festival Gifts, Greetings & Stickers</p>
-  </header>
-
-  <div class="container">
-    <!-- Product Card 1 -->
-    <div class="card">
-      <img src="https://m.media-amazon.com/images/I/71XZWsl7yDL._AC_UL320_.jpg" alt="Saree">
-      <h3>Traditional Saree</h3>
-      <p>Perfect gift for this Puja season.</p>
-      <a href="YOUR_AMAZON_AFFILIATE_LINK" class="btn" target="_blank">Buy Now</a>
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <div class="brand" aria-label="Festival Hub brand">
+        <div class="logo" aria-hidden="true">🪔</div>
+        <div class="title">Festival Hub • Durga Puja 2025</div>
+      </div>
+      <nav class="nav-cta">
+        <a class="btn ghost" href="#gifts">Gifts</a>
+        <a class="btn ghost" href="#greetings">Greetings</a>
+        <a class="btn gold" href="#offers">Today's Offers</a>
+      </nav>
     </div>
-
-    <!-- Product Card 2 -->
-    <div class="card">
-      <img src="https://m.media-amazon.com/images/I/81eutF-7eXL._AC_UL320_.jpg" alt="Kurta">
-      <h3>Ethnic Kurta</h3>
-      <p>Stylish and festive wear for men.</p>
-      <a href="YOUR_AFFILIATE_LINK" class="btn" target="_blank">Buy Now</a>
+  </header>  <section class="hero container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Festival season • curated for you</span>
+        <h1>Shubho Durga Puja! <br>Premium Gifts, Blessings & Smooth Experience</h1>
+        <p class="lead">Handpicked products, AI-personalized greetings, and free sticker packs. Ultra-fast, mobile-first, and delightful animations—because Puja should feel magical. ✨</p>
+        <div class="cta-row">
+          <a class="btn gold" href="#gifts">Shop Festival Picks</a>
+          <a class="btn" href="#greetings">Get Free Stickers</a>
+        </div>
+      </div>
+      <div class="scene" aria-hidden="true">
+        <!-- Spinning mandala background -->
+        <div class="mandala" role="img" aria-label="Decorative mandala">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="g" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ffd88f"/>
+                <stop offset="60%" stop-color="#f7c66a"/>
+                <stop offset="100%" stop-color="transparent"/>
+              </radialGradient>
+            </defs>
+            <g stroke="url(#g)" stroke-opacity=".5">
+              <!-- simple mandala rings -->
+              <circle cx="50" cy="50" r="44"/>
+              <circle cx="50" cy="50" r="36"/>
+              <circle cx="50" cy="50" r="28"/>
+              <g opacity=".8">
+                <!-- petals -->
+                <g>
+                  <path d="M50 6 C52 12, 58 16, 50 20 C42 16, 48 12, 50 6Z"/>
+                  <path d="M50 94 C52 88, 58 84, 50 80 C42 84, 48 88, 50 94Z"/>
+                  <path d="M6 50 C12 48, 16 42, 20 50 C16 58, 12 52, 6 50Z"/>
+                  <path d="M94 50 C88 48, 84 42, 80 50 C84 58, 88 52, 94 50Z"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div><!-- Diya Bowl (SVG) -->
+    <svg class="diya" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+      <!-- Bowl -->
+      <defs>
+        <linearGradient id="bowl" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#8a2a2a"/>
+          <stop offset="60%" stop-color="#5e1b1b"/>
+        </linearGradient>
+      </defs>
+      <ellipse cx="300" cy="300" rx="230" ry="28" fill="#000" opacity=".35"/>
+      <path d="M120,170 Q300,280 480,170 L520,170 Q500,290 300,320 Q100,290 80,170 Z" fill="url(#bowl)" stroke="#e39d5a" stroke-opacity=".4"/>
+    </svg>
+    <!-- Flame & Smoke layers (HTML for easier animation) -->
+    <div class="flame" aria-hidden="true">
+      <div class="f"></div>
+      <div class="f"></div>
+      <div class="f"></div>
     </div>
-
-    <!-- Product Card 3 -->
-    <div class="card">
-      <img src="https://m.media-amazon.com/images/I/71MiU8z0k0L._AC_UL320_.jpg" alt="Idol">
-      <h3>Durga Idol</h3>
-      <p>Bring Maa Durga’s blessings home.</p>
-      <a href="YOUR_AFFILIATE_LINK" class="btn" target="_blank">Buy Now</a>
-    </div>
-
-    <!-- Product Card 4 -->
-    <div class="card">
-      <img src="https://m.media-amazon.com/images/I/81YwRgdJ2DL._AC_UL320_.jpg" alt="Sweets">
-      <h3>Festival Sweets</h3>
-      <p>Celebrate with delicious sweets & joy.</p>
-      <a href="YOUR_AFFILIATE_LINK" class="btn" target="_blank">Buy Now</a>
+    <div class="smoke" aria-hidden="true">
+      <span style="--d:0"></span>
+      <span style="--d:1"></span>
+      <span style="--d:2"></span>
     </div>
   </div>
+</div>
 
-  <footer>
-    © 2020 Festival Hub | Made with ❤️ for Puja
+  </section>  <!-- Moving offer marquee -->  <div class="marquee" id="offers" aria-label="today's offers scroller">
+    <div class="track">
+      <div class="pill">10% OFF Sarees • Use code: PUJA10</div>
+      <div class="pill">Free Stickers Pack – Limited</div>
+      <div class="pill">Same‑Day Delivery on Select Items</div>
+      <div class="pill">Buy 1 Get 1: Diyas & Lights</div>
+      <div class="pill">Hand‑Picked Durga Idols</div>
+      <!-- repeat for loop effect -->
+      <div class="pill">10% OFF Sarees • Use code: PUJA10</div>
+      <div class="pill">Free Stickers Pack – Limited</div>
+      <div class="pill">Same‑Day Delivery on Select Items</div>
+      <div class="pill">Buy 1 Get 1: Diyas & Lights</div>
+      <div class="pill">Hand‑Picked Durga Idols</div>
+    </div>
+  </div>  <section class="section container" id="gifts">
+    <h2>Curated Festival Gifts</h2>
+    <p class="muted">Premium picks for family & friends. Hover to feel the magic ✨</p>
+    <div class="grid" role="list">
+      <!-- CARD TEMPLATE: duplicate and replace links/images/text -->
+      <article class="card" role="listitem">
+        <img class="thumb" loading="lazy" src="https://m.media-amazon.com/images/I/71XZWsl7yDL._AC_UL480_FMwebp_QL65_.jpg" alt="Traditional saree in festive red"/>
+        <div class="content">
+          <span class="tag">Best Seller</span>
+          <div class="title">Traditional Silk Saree</div>
+          <div class="desc">Elegant weave, perfect for Anjali & Pushpanjali.</div>
+          <div class="price"><span class="strike">₹2,499</span><strong>₹1,899</strong></div>
+          <div class="buy">
+            <a class="btn buy" target="_blank" href="YOUR_AFFILIATE_LINK_HERE">Buy on Amazon</a>
+            <a class="btn ghost" target="_blank" href="#">Details</a>
+          </div>
+        </div>
+      </article><article class="card" role="listitem">
+    <img class="thumb" loading="lazy" src="https://m.media-amazon.com/images/I/81eutF-7eXL._AC_UL480_FMwebp_QL65_.jpg" alt="Men's kurta set"/>
+    <div class="content">
+      <span class="tag">Trending</span>
+      <div class="title">Men's Ethnic Kurta</div>
+      <div class="desc">Breathable cotton, crafted for pandal hopping.</div>
+      <div class="price"><span class="strike">₹1,499</span><strong>₹1,099</strong></div>
+      <div class="buy">
+        <a class="btn buy" target="_blank" href="YOUR_AFFILIATE_LINK_HERE">Buy on Flipkart</a>
+        <a class="btn ghost" target="_blank" href="#">Details</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card" role="listitem">
+    <img class="thumb" loading="lazy" src="https://m.media-amazon.com/images/I/71MiU8z0k0L._AC_UL480_FMwebp_QL65_.jpg" alt="Durga idol"/>
+    <div class="content">
+      <span class="tag">Handcrafted</span>
+      <div class="title">Maa Durga Idol</div>
+      <div class="desc">Eco‑friendly clay idol with intricate detailing.</div>
+      <div class="price"><span class="strike">₹1,299</span><strong>₹999</strong></div>
+      <div class="buy">
+        <a class="btn buy" target="_blank" href="YOUR_AFFILIATE_LINK_HERE">Buy on Amazon</a>
+        <a class="btn ghost" target="_blank" href="#">Details</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card" role="listitem">
+    <img class="thumb" loading="lazy" src="https://m.media-amazon.com/images/I/81YwRgdJ2DL._AC_UL480_FMwebp_QL65_.jpg" alt="Assorted sweets and dry fruits"/>
+    <div class="content">
+      <span class="tag">Gifting</span>
+      <div class="title">Sweets & Dry Fruits Box</div>
+      <div class="desc">Festive assortment to sweeten every blessing.</div>
+      <div class="price"><span class="strike">₹1,099</span><strong>₹849</strong></div>
+      <div class="buy">
+        <a class="btn buy" target="_blank" href="YOUR_AFFILIATE_LINK_HERE">Buy on Amazon</a>
+        <a class="btn ghost" target="_blank" href="#">Details</a>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+  </section>  <section class="section container" id="greetings">
+    <h2>Free Greetings & Sticker Packs</h2>
+    <p class="muted">Share the joy! Download, share on WhatsApp/Telegram/Instagram.</p>
+    <div class="pill-row">
+      <a class="dl" target="_blank" href="YOUR_GOOGLE_DRIVE_LINK_FOR_HD_GREETINGS">📥 HD Greeting Cards (PNG)</a>
+      <a class="dl" target="_blank" href="YOUR_GOOGLE_DRIVE_LINK_FOR_WHATSAPP_STICKERS">🧩 WhatsApp Sticker Pack (WebP)</a>
+      <a class="dl" target="_blank" href="YOUR_CANVA_TEMPLATE_LINK">🎨 Edit in Canva (Free)</a>
+    </div>
+  </section>  <footer>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div>© 2020 Festival Hub • Made with ❤️ • <span class="muted">Kolkata, IN</span></div>
+      <div class="social" aria-label="social links">
+        <a href="#" aria-label="Instagram" title="Instagram">📷</a>
+        <a href="#" aria-label="Facebook" title="Facebook">📘</a>
+        <a href="#" aria-label="Pinterest" title="Pinterest">📌</a>
+      </div>
+    </div>
+  </footer>  <!-- Decorative floating particles -->  <div class="particles" aria-hidden="true" id="particles"></div>  <script>
+    /* Fireflies / gold dust */
+    const P = document.getElementById('particles');
+    const N = Math.min(70, Math.floor(window.innerWidth/16));
+    for(let i=0;i<N;i++){
+      const s = document.createElement('span');
+      s.className = 'particle';
+      const x = Math.random()*100 + 'vw';
+      const d = 16 + Math.random()*18; // duration
+      s.style.setProperty('--x', x);
+      s.style.left = Math.random()*100 + 'vw';
+      s.style.animationDuration = d + 's';
+      s.style.animationDelay = (Math.random()*d) + 's';
+      P.appendChild(s);
+    }
+
+    // Smooth anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id = a.getAttribute('href');
+        if(id && id.length>1){ e.preventDefault(); document.querySelector(id).scrollIntoView({behavior:'smooth', block:'start'}); }
+      })
+    })
+
+    // Tiny interaction: ripple on buttons
+    document.querySelectorAll('.btn').forEach(btn=>{
+      btn.addEventListener('pointerdown', e=>{
+        const r = document.createElement('span');
+        const rect = btn.getBoundingClientRect();
+        r.style.position='absolute';r.style.inset='0';r.style.borderRadius='inherit';r.style.overflow='hidden';
+        const wave = document.createElement('span');
+        wave.style.position='absolute'; wave.style.width=wave.style.height='20px'; wave.style.borderRadius='999px';
+        wave.style.background='rgba(255,255,255,.25)'; wave.style.transform='translate(-50%,-50%) scale(0)';
+        wave.style.left = (e.clientX-rect.left)+ 'px'; wave.style.top = (e.clientY-rect.top)+ 'px';
+        wave.style.transition='transform .6s ease, opacity .8s ease'; r.appendChild(wave); btn.appendChild(r);
+        requestAnimationFrame(()=>{ wave.style.transform='translate(-50%,-50%) scale(20)'; wave.style.opacity='0'; });
+        setTimeout(()=>r.remove(),700);
+      })
+    })
+  </script></body>
+</html>    © 2020 Festival Hub | Made with ❤️ for Puja
   </footer>
 
 </body>
