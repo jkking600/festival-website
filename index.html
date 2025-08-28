@@ -282,6 +282,201 @@ footer{border-top:1px solid rgba(255,255,255,.08); background:linear-gradient(18
     </div>
   </section>  <footer>
     <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div>© 2025 Festival Hub • Made with ❤️ • <span class="muted">Kolkata, IN</span></div>
+      <div class="social" aria-label="social links">
+        <a href="#" aria-label="Instagram" title="Instagram">📷</a>
+        <a href="#" aria-label="Facebook" title="Facebook">📘</a>
+        <a href="#" aria-label="Pinterest" title="Pinterest">📌</a>
+      </div>
+    </div>
+  </footer>  <!-- Decorative floating particles -->  <div class="particles" aria-hidden="true" id="particles"></div>  <script>
+    /* Fireflies / gold dust */
+    const P = document.getElementById('particles');
+    const N = Math.min(70, Math.floor(window.innerWidth/16));
+    for(let i=0;i<N;i++){
+      const s = document.createElement('span');
+      s.className = 'particle';
+      const x = Math.random()*100 + 'vw';
+      const d = 16 + Math.random()*18; // duration
+      s.style.setProperty('--x', x);
+      s.style.left = Math.random()*100 + 'vw';
+      s.style.animationDuration = d + 's';
+      s.style.animationDelay = (Math.random()*d) + 's';
+      P.appendChild(s);
+    }
+
+    // Smooth anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id = a.getAttribute('href');
+        if(id && id.length>1){ e.preventDefault(); document.querySelector(id).scrollIntoView({behavior:'smooth', block:'start'}); }
+      })
+    })
+
+    // Tiny interaction: ripple on buttons
+    document.querySelectorAll('.btn').forEach(btn=>{
+      btn.addEventListener('pointerdown', e=>{
+        const r = document.createElement('span');
+        const rect = btn.getBoundingClientRect();
+        r.style.position='absolute';r.style.inset='0';r.style.borderRadius='inherit';r.style.overflow='hidden';
+        const wave = document.createElement('span');
+        wave.style.position='absolute'; wave.style.width=wave.style.height='20px'; wave.style.borderRadius='999px';
+        wave.style.background='rgba(255,255,255,.25)'; wave.style.transform='translate(-50%,-50%) scale(0)';
+        wave.style.left = (e.clientX-rect.left)+ 'px'; wave.style.top = (e.clientY-rect.top)+ 'px';
+        wave.style.transition='transform .6s ease, opacity .8s ease'; r.appendChild(wave); btn.appendChild(r);
+        requestAnimationFrame(()=>{ wave.style.transform='translate(-50%,-50%) scale(20)'; wave.style.opacity='0'; });
+        setTimeout(()=>r.remove(),700);
+      })
+    })
+  </script></body>
+</html>    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Festival season • curated for you</span>
+        <h1>Shubho Durga Puja! <br>Premium Gifts, Blessings & Smooth Experience</h1>
+        <p class="lead">Handpicked products, AI-personalized greetings, and free sticker packs. Ultra-fast, mobile-first, and delightful animations—because Puja should feel magical. ✨</p>
+        <div class="cta-row">
+          <a class="btn gold" href="#gifts">Shop Festival Picks</a>
+          <a class="btn" href="#greetings">Get Free Stickers</a>
+        </div>
+      </div>
+      <div class="scene" aria-hidden="true">
+        <!-- Spinning mandala background -->
+        <div class="mandala" role="img" aria-label="Decorative mandala">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="g" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ffd88f"/>
+                <stop offset="60%" stop-color="#f7c66a"/>
+                <stop offset="100%" stop-color="transparent"/>
+              </radialGradient>
+            </defs>
+            <g stroke="url(#g)" stroke-opacity=".5">
+              <!-- simple mandala rings -->
+              <circle cx="50" cy="50" r="44"/>
+              <circle cx="50" cy="50" r="36"/>
+              <circle cx="50" cy="50" r="28"/>
+              <g opacity=".8">
+                <!-- petals -->
+                <g>
+                  <path d="M50 6 C52 12, 58 16, 50 20 C42 16, 48 12, 50 6Z"/>
+                  <path d="M50 94 C52 88, 58 84, 50 80 C42 84, 48 88, 50 94Z"/>
+                  <path d="M6 50 C12 48, 16 42, 20 50 C16 58, 12 52, 6 50Z"/>
+                  <path d="M94 50 C88 48, 84 42, 80 50 C84 58, 88 52, 94 50Z"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div><!-- Diya Bowl (SVG) -->
+    <svg class="diya" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+      <!-- Bowl -->
+      <defs>
+        <linearGradient id="bowl" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#8a2a2a"/>
+          <stop offset="60%" stop-color="#5e1b1b"/>
+        </linearGradient>
+      </defs>
+      <ellipse cx="300" cy="300" rx="230" ry="28" fill="#000" opacity=".35"/>
+      <path d="M120,170 Q300,280 480,170 L520,170 Q500,290 300,320 Q100,290 80,170 Z" fill="url(#bowl)" stroke="#e39d5a" stroke-opacity=".4"/>
+    </svg>
+    <!-- Flame & Smoke layers (HTML for easier animation) -->
+    <div class="flame" aria-hidden="true">
+      <div class="f"></div>
+      <div class="f"></div>
+      <div class="f"></div>
+    </div>
+    <div class="smoke" aria-hidden="true">
+      <span style="--d:0"></span>
+      <span style="--d:1"></span>
+      <span style="--d:2"></span>
+    </div>
+  </div>
+</div>
+
+  </section>  <!-- Moving offer marquee -->  <div class="marquee" id="offers" aria-label="today's offers scroller">
+    <div class="track">
+      <div class="pill">10% OFF Sarees • Use code: PUJA10</div>
+      <div class="pill">Free Stickers Pack – Limited</div>
+      <div class="pill">Same‑Day Delivery on Select Items</div>
+      <div class="pill">Buy 1 Get 1: Diyas & Lights</div>
+      <div class="pill">Hand‑Picked Durga Idols</div>
+      <!-- repeat for loop effect -->
+      <div class="pill">10% OFF Sarees • Use code: PUJA10</div>
+      <div class="pill">Free Stickers Pack – Limited</div>
+      <div class="pill">Same‑Day Delivery on Select Items</div>
+      <div class="pill">Buy 1 Get 1: Diyas & Lights</div>
+      <div class="pill">Hand‑Picked Durga Idols</div>
+    </div>
+  </div>  <section class="section container" id="gifts">
+    <h2>Curated Festival Gifts</h2>
+    <p class="muted">Premium picks for family & friends. Hover to feel the magic ✨</p>
+    <div class="grid" role="list">
+      <!-- CARD TEMPLATE: duplicate and replace links/images/text -->
+      <article class="card" role="listitem">
+        <img class="thumb" loading="lazy" src="https://m.media-amazon.com/images/I/71XZWsl7yDL._AC_UL480_FMwebp_QL65_.jpg" alt="Traditional saree in festive red"/>
+        <div class="content">
+          <span class="tag">Best Seller</span>
+          <div class="title">Traditional Silk Saree</div>
+          <div class="desc">Elegant weave, perfect for Anjali & Pushpanjali.</div>
+          <div class="price"><span class="strike">₹2,499</span><strong>₹1,899</strong></div>
+          <div class="buy">
+            <a class="btn buy" target="_blank" href="YOUR_AFFILIATE_LINK_HERE">Buy on Amazon</a>
+            <a class="btn ghost" target="_blank" href="#">Details</a>
+          </div>
+        </div>
+      </article><article class="card" role="listitem">
+    <img class="thumb" loading="lazy" src="https://m.media-amazon.com/images/I/81eutF-7eXL._AC_UL480_FMwebp_QL65_.jpg" alt="Men's kurta set"/>
+    <div class="content">
+      <span class="tag">Trending</span>
+      <div class="title">Men's Ethnic Kurta</div>
+      <div class="desc">Breathable cotton, crafted for pandal hopping.</div>
+      <div class="price"><span class="strike">₹1,499</span><strong>₹1,099</strong></div>
+      <div class="buy">
+        <a class="btn buy" target="_blank" href="YOUR_AFFILIATE_LINK_HERE">Buy on Flipkart</a>
+        <a class="btn ghost" target="_blank" href="#">Details</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card" role="listitem">
+    <img class="thumb" loading="lazy" src="https://m.media-amazon.com/images/I/71MiU8z0k0L._AC_UL480_FMwebp_QL65_.jpg" alt="Durga idol"/>
+    <div class="content">
+      <span class="tag">Handcrafted</span>
+      <div class="title">Maa Durga Idol</div>
+      <div class="desc">Eco‑friendly clay idol with intricate detailing.</div>
+      <div class="price"><span class="strike">₹1,299</span><strong>₹999</strong></div>
+      <div class="buy">
+        <a class="btn buy" target="_blank" href="YOUR_AFFILIATE_LINK_HERE">Buy on Amazon</a>
+        <a class="btn ghost" target="_blank" href="#">Details</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="card" role="listitem">
+    <img class="thumb" loading="lazy" src="https://m.media-amazon.com/images/I/81YwRgdJ2DL._AC_UL480_FMwebp_QL65_.jpg" alt="Assorted sweets and dry fruits"/>
+    <div class="content">
+      <span class="tag">Gifting</span>
+      <div class="title">Sweets & Dry Fruits Box</div>
+      <div class="desc">Festive assortment to sweeten every blessing.</div>
+      <div class="price"><span class="strike">₹1,099</span><strong>₹849</strong></div>
+      <div class="buy">
+        <a class="btn buy" target="_blank" href="YOUR_AFFILIATE_LINK_HERE">Buy on Amazon</a>
+        <a class="btn ghost" target="_blank" href="#">Details</a>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+  </section>  <section class="section container" id="greetings">
+    <h2>Free Greetings & Sticker Packs</h2>
+    <p class="muted">Share the joy! Download, share on WhatsApp/Telegram/Instagram.</p>
+    <div class="pill-row">
+      <a class="dl" target="_blank" href="YOUR_GOOGLE_DRIVE_LINK_FOR_HD_GREETINGS">📥 HD Greeting Cards (PNG)</a>
+      <a class="dl" target="_blank" href="YOUR_GOOGLE_DRIVE_LINK_FOR_WHATSAPP_STICKERS">🧩 WhatsApp Sticker Pack (WebP)</a>
+      <a class="dl" target="_blank" href="YOUR_CANVA_TEMPLATE_LINK">🎨 Edit in Canva (Free)</a>
+    </div>
+  </section>  <footer>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
       <div>© 2020 Festival Hub • Made with ❤️ • <span class="muted">Kolkata, IN</span></div>
       <div class="social" aria-label="social links">
         <a href="#" aria-label="Instagram" title="Instagram">📷</a>
